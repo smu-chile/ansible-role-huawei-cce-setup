@@ -1,4 +1,4 @@
-Role Name
+Huawei CCE Setup
 =========
 
 Role to setup a bastion to connect with a cce cluster
