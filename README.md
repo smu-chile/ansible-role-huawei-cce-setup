@@ -50,12 +50,3 @@ Author Information
 
 - [César vergara](mailto:cvergarae@smu.cl)
 
-  roles:
-    - role: ansible-role-huawei-cce-setup
-      KUBECONFIG: "{{ lookup('env', 'KUBECONFIG') }}"
-      LB_ID: "{{ lookup('env', 'LB_ID') }}"
-      LB_VIP_SUBNET_ID: "{{ lookup('env', 'LB_SUBNET_ID') }}"
-      TRAEFIK_HOSTNAME: "{{ lookup('env', 'TRAEFIK_HOSTNAME') }}"
-      LB_PUBLIC_IP: "{{ lookup('env', 'LB_PUBLIC_IP') }}"
-      TRAEFIK_ADMIN_HOSTNAME: "{{ lookup('env', 'TRAEFIK_ADMIN_HOSTNAME') }}"
-      TRAEFIK_ADMIN_PASSWD: "{{ lookup('env', 'TRAEFIK_ADMIN_PASSWD') }}"
