@@ -1,8 +1,7 @@
 Huawei CCE Setup
 =========
 
-Role to setup a bastion to connect with a cce cluster
-
+Ansible role to setup a bastion server to connect with a cce cluster
 
 
 Role Variables
@@ -10,17 +9,10 @@ Role Variables
 
 ```
       KUBECONFIG: Archivo de configuración ~/.kube/config, este archivo se obtiene de terraform
-      LB_ID: id de Balanceador, se obtiene de terraform
-      LB_VIP_SUBNET_ID: id de subnet de balanceador, se obtiene de terraform
-      LB_PUBLIC_IP: IP publica de balanceador
-      TRAEFIK_HOSTNAME: hostname donde se alojara Traefik, esto crea un registro A, apuntando a la Ip del balanceador:
-      TRAEFIK_ADMIN_HOSTNAME: hostname donde se alojara el Admin Manager de Traefik, esto crea un registro CNAME apuntando a TRAEFIK_HOSTNAME
-      TRAEFIK_ADMIN_PASSWD: archivo passwd para autenticación del admin de traefik, se crea utilizando passwd.
 ```
 
 Example Playbook
 ----------------
-
 
 ```
 - hosts: all
@@ -31,19 +23,8 @@ Example Playbook
   roles:
     - role: ansible-role-huawei-cce-setup
       KUBECONFIG: "{{ lookup('env', 'KUBECONFIG') }}"
-      LB_ID: "{{ lookup('env', 'LB_ID') }}"
-      LB_VIP_SUBNET_ID: "{{ lookup('env', 'LB_SUBNET_ID') }}"
-      TRAEFIK_HOSTNAME: "{{ lookup('env', 'TRAEFIK_HOSTNAME') }}"
-      LB_PUBLIC_IP: "{{ lookup('env', 'LB_PUBLIC_IP') }}"
-      TRAEFIK_ADMIN_HOSTNAME: "{{ lookup('env', 'TRAEFIK_ADMIN_HOSTNAME') }}"
-      TRAEFIK_ADMIN_PASSWD: "{{ lookup('env', 'TRAEFIK_ADMIN_PASSWD') }}"
 
 ```
-
-License
--------
-
-BSD
 
 Author Information
 ------------------
