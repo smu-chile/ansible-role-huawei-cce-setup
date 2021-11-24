@@ -8,7 +8,7 @@ Role Variables
 --------------
 
 ```
-      KUBECONFIG: Archivo de configuración ~/.kube/config, este archivo se obtiene de terraform
+      KUBECONFIG: Configuration file ~/.kube/config
 ```
 
 Example Playbook
@@ -19,7 +19,6 @@ Example Playbook
   become: no
   remote_user: "root"
 
-# Uncomment "aws-eks-setup" role only if you are upgrading the cluster
   roles:
     - role: ansible-role-huawei-cce-setup
       KUBECONFIG: "{{ lookup('env', 'KUBECONFIG') }}"
